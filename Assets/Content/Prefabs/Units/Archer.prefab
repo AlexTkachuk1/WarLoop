@@ -535,7 +535,7 @@ MonoBehaviour:
   <CurrentHealth>k__BackingField: 2
   <RegenPerSecond>k__BackingField: 0
   <DamagePerSecond>k__BackingField: 0.8
-  _deathEffectPrefab: {fileID: 0}
+  _deathEffectPrefab: {fileID: 8144435333034838183, guid: 292e2b3ca2597894b9e220690ac98e7f, type: 3}
   <UnitType>k__BackingField: 2
   <Speed>k__BackingField: 1
   <Cost>k__BackingField: 2
