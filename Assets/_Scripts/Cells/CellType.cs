@@ -14,5 +14,8 @@
         LeftCornerWall = 9,
         RightCornerWall = 10,
         BottomCornerWall = 11,
+        
+        Tower = 12,
+        Road = 13,
     }
 }

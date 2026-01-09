@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Scripts.Actors.Units;
 
 namespace _Scripts.Actors.Buildings
 {
     public class Building : Actor
     {
+        public List<List<Cell>> Roads { get; private set; } = new List<List<Cell>>();
+        
         public void Init(FactionColor factionColor)
         {
             InitInternal(factionColor);

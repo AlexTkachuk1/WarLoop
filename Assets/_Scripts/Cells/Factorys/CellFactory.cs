@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using _Scripts.Actors;
 
 namespace _Scripts
 {
@@ -26,7 +27,7 @@ namespace _Scripts
             }
         }
 
-        public Cell Create(CellType type, int x, int y, Transform parent = null)
+        public Cell Create(CellType type, int x, int y, Transform parent = null, FactionColor color = FactionColor.Red)
         {
             if (!_cache.TryGetValue(type, out var prefab))
             {
@@ -34,10 +35,25 @@ namespace _Scripts
                 return null;
             }
 
-            Cell cell = Instantiate(prefab, parent);
-            cell.Init(x, y);
+            Cell result = null;
 
-            return cell;
-        }
+            if (type == CellType.Tower)
+            {
+                var pos = new Vector2(x, y);
+                Actor actor = ActorsFactory.CreateBuilding(color ,pos, parent);
+                    
+                result = actor.gameObject.GetComponent<Cell>();
+                result.Init(x, y);
+            }
+            else
+            {
+                Cell cell = Instantiate(prefab, parent);
+                cell.Init(x, y);
+                
+                result = cell;
+            }            
+            
+            return result;
+        }        
     }
 }

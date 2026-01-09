@@ -7,12 +7,14 @@ namespace _Scripts.Actors
 {
     public static class ActorsFactory
     {
-        public static void CreateBuilding(FactionColor factionColor, Vector3 position)
+        public static Actor CreateBuilding(FactionColor factionColor, Vector3 position, Transform parent)
         {
             var prefab = Bootstrap.Instance.GameData.BuildingPrefab;
-            var building = Object.Instantiate(prefab, position, Quaternion.identity);
+            var building = Object.Instantiate(prefab, position, Quaternion.identity, parent);
             building.Init(factionColor);
             ActorsUpdater.Instance.Add(building);
+            
+            return building;
         }
         
         public static void CreateUnit(FactionColor factionColor, UnitType unitType, List<Cell> path)

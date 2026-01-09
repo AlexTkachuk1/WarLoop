@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts
 {
-    public class MapGenerator : MonoBehaviour
+    public class MapGenerator : Singleton<MapGenerator>
     {
+        [FormerlySerializedAs("width")]
         [Header("Map Size")]
-        [SerializeField] private int width = 20;
-        [SerializeField] private int height = 10;
+        [SerializeField] public int Width = 20;
+        [SerializeField] public int Height = 10;
 
         [Header("Factory")]
         [SerializeField] private CellFactory cellFactory;
@@ -15,17 +17,16 @@ namespace _Scripts
         [Header("Parents")]
         [SerializeField] private Transform cellsParent;
         [SerializeField] private Transform wallsParent;
-
+        
+        private const int OFFSET = 4;
+        public Vector2 MinBounds => new Vector2(- OFFSET, - OFFSET);
+        public Vector2 MaxBounds => new Vector2(Width + OFFSET, Height + OFFSET);
+        
         public IReadOnlyList<Cell> WalkableCells => _walkableCells;
         public IReadOnlyList<Cell> WallCells => _wallCells;
 
         private readonly List<Cell> _walkableCells = new();
         private readonly List<Cell> _wallCells = new();
-
-        void Start()
-        {
-            Generate();
-        }
         
         public void Generate()
         {
@@ -37,9 +38,9 @@ namespace _Scripts
 
         private void GenerateMainField()
         {
-            for (int x = 0; x < width; x++)
+            for (int x = 0; x < Width; x++)
             {
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < Height; y++)
                 {
                     CellType type = ResolveCellType(x, y);
                     Cell cell = cellFactory.Create(type, x, y, cellsParent);
@@ -53,13 +54,13 @@ namespace _Scripts
         {
             int wallY = -1;
 
-            for (int x = 0; x < width; x++)
+            for (int x = 0; x < Width; x++)
             {
                 CellType type;
 
                 if (x == 0)
                     type = CellType.LeftCornerWall;
-                else if (x == width - 1)
+                else if (x == Width - 1)
                     type = CellType.RightCornerWall;
                 else
                     type = CellType.BottomCornerWall;
@@ -72,9 +73,9 @@ namespace _Scripts
         private CellType ResolveCellType(int x, int y)
         {
             bool left = x == 0;
-            bool right = x == width - 1;
+            bool right = x == Width - 1;
             bool bottom = y == 0;
-            bool top = y == height - 1;
+            bool top = y == Height - 1;
 
             if (left && bottom) return CellType.LowerLeftCorner;
             if (right && bottom) return CellType.LowerRightCorner;
