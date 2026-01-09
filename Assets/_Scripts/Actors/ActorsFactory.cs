@@ -12,7 +12,7 @@ namespace _Scripts.Actors
             var prefab = Bootstrap.Instance.GameData.BuildingPrefab;
             var building = Object.Instantiate(prefab, position, Quaternion.identity, parent);
             building.Init(factionColor);
-            ActorsUpdater.Instance.Add(building);
+            GameLoopUpdater.Instance.Add(building);
             
             return building;
         }
@@ -22,7 +22,7 @@ namespace _Scripts.Actors
             var prefab = Bootstrap.Instance.GameData.GetUnit(unitType);
             var unit = Object.Instantiate(prefab, path[0].transform.position, Quaternion.identity);
             unit.Init(path, factionColor);
-            ActorsUpdater.Instance.Add(unit);
+            GameLoopUpdater.Instance.Add(unit);
         }
     }
 }

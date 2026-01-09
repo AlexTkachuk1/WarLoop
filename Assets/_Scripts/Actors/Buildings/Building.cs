@@ -24,6 +24,14 @@ namespace _Scripts.Actors.Buildings
         {
             Capture(attacker);
         }
+        
+        public bool TrySpend(float cost)
+        {
+            var isAvailable = CurrentHealth >= cost;
+            if (isAvailable)
+                CurrentHealth -= cost;
+            return isAvailable;
+        }
 
         protected override float CalculateIncomingDamage(Actor attacker) => attacker.DamagePerSecond;
 

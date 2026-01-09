@@ -16,11 +16,13 @@ namespace _Scripts.Actors.Units
         [field: SerializeField] public float Cost { get; private set; }
         
         private List<Vector2> _positions;
-        private Building _target;
         private float[] _segmentLengths;
         private float _totalLength;
         private float _distanceTraveled;
         private int _segmentIndex;
+
+        public Building Origin { get; private set; }
+        public Building Target { get; private set; }
 
         public void Init(List<Cell> cells, FactionColor factionColor)
         {
@@ -34,7 +36,8 @@ namespace _Scripts.Actors.Units
 
             transform.position = _positions[0];
 
-            _target = cells.Last().GetComponent<Building>() ?? throw new NullReferenceException("Cell is not Building");
+            Origin = cells.First().GetComponent<Building>() ?? throw new NullReferenceException("Cell is not Building");
+            Target = cells.Last().GetComponent<Building>() ?? throw new NullReferenceException("Cell is not Building");
         }
 
         public override ProcessFrameResult ProcessFrame()
@@ -46,7 +49,7 @@ namespace _Scripts.Actors.Units
             if (TryMove())
                 return ProcessFrameResult.Running;
                 
-            _target.Absorb(this);
+            Target.Absorb(this);
             return ProcessFrameResult.ScheduledForDisposal;
         }
 
