@@ -500,9 +500,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <GameData>k__BackingField:
-    <RockPaperScissorsDamageMod>k__BackingField: 0
+    <RockPaperScissorsDamageMod>k__BackingField: 2
     <BuildingPrefab>k__BackingField: {fileID: 3403343590524338537, guid: d4e80290a4287af41a3e9865383bb63a, type: 3}
-    <UnitPrefabs>k__BackingField: []
+    <UnitPrefabs>k__BackingField:
+    - {fileID: 8283422972078131938, guid: c8c3da2f13bd73541bf914331d7b80a5, type: 3}
+    - {fileID: 7153001642255988616, guid: e2bb2fd96de471447a87464abf534aee, type: 3}
+    - {fileID: 2104421640092200435, guid: 9a6169629d7c905498e6bbff0d6d6e16, type: 3}
 --- !u!114 &1066131103
 MonoBehaviour:
   m_ObjectHideFlags: 0
