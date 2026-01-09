@@ -1,20 +1,22 @@
-﻿namespace _Scripts.Models
+﻿using System.Linq;
+using _Scripts.Actors.Buildings;
+using _Scripts.Actors.Units;
+using UnityEngine;
+
+namespace _Scripts.Models
 {
     [System.Serializable]
     public class GameData
     {
-        public GameData() { }
-        // public GameData(int rp, int coin, int time, float distance)
-        // {
-        //     Rp = rp;
-        //     Coin = coin;
-        //     Time = time;
-        //     Distance = distance;
-        // }
-        //
-        // public int Rp { get; }
-        // public int Coin { get; }
-        // public int Time { get; }
-        // public float Distance { get; }
+        public GameData()
+        {
+        }
+        
+        [field: SerializeField] public float RockPaperScissorsDamageMod { get; private set; }
+        [field: SerializeField] public Building BuildingPrefab { get; private set; }
+        [field: SerializeField] public Unit[] UnitPrefabs { get; private set; }
+        
+        public Unit GetUnit(UnitType type)
+            => UnitPrefabs.Single(a => a.UnitType == type);
     }
 }
