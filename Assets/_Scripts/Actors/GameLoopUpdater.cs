@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Scripts.Actors.Buildings;
 using _Scripts.AI;
+using _Scripts.Controllers;
 using _Scripts.GameLoop;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ namespace _Scripts.Actors
             Actors.Add(actor);
             if (actor is Building building)
             {
+                if (building.Faction == GameplayController.Instance.PlayerColor) return;
+                
                 var buildingStrategy = new BuildingStrategy();
                 _strategies.Add(buildingStrategy);
                 buildingStrategy.Init(building, 

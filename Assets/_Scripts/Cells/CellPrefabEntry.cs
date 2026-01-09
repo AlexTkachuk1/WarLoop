@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿using _Scripts.Actors.Units;
 
 namespace _Scripts
 {
@@ -7,5 +7,13 @@ namespace _Scripts
     {
         public CellType type;
         public Cell prefab;
+    }
+    
+    [System.Serializable]
+    public struct UnitPrefabEntry
+    {
+        public UnitType type;
+        public Unit prefab;
+        public int cost;
     }
 }

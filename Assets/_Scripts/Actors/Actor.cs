@@ -11,7 +11,7 @@ namespace _Scripts.Actors
         [field: SerializeField] public float CurrentHealth { get; protected set; }
         [field: SerializeField] public float RegenPerSecond { get; private set; }
         [field: SerializeField] public float DamagePerSecond { get; private set; }
-
+        
         public FactionColor Faction
         {
             get => _faction;
@@ -29,6 +29,13 @@ namespace _Scripts.Actors
         private float _healthMax;
         private FactionColor _faction;
 
+        public void SpawnUnit(int cost)
+        {
+            if (cost >= CurrentHealth) return;
+            
+            CurrentHealth -= cost;
+        }
+        
         protected void InitInternal(FactionColor factionColor)
         {
             _healthMax = CurrentHealth;

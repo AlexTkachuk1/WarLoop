@@ -5,6 +5,7 @@ using _Scripts.Actors;
 using _Scripts.Actors.Buildings;
 using _Scripts.Actors.Units;
 using _Scripts.GameLoop;
+using _Scripts.Helpers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -52,12 +53,29 @@ namespace _Scripts.AI
             switch (RoadSelectionStrategy)
             {
                 case RoadSelectionStrategyType.Offensive:
-                    var enemyBuildings = Building.Roads.Where(a => Building.Faction != a.Last().GetComponent<Building>().Faction).ToList();
+                    var enemyBuildings = Building.Roads.Where(a =>
+                    {
+                        if (!BuildingUtils.TryGetBuildingOnCell(a.Last(), out var building))
+                        {
+                            return true;
+                        }
+
+                        return Building.Faction != building.Faction;
+                    }).ToList();
                     if (enemyBuildings.Count > 0)
                         return enemyBuildings[Random.Range(0, enemyBuildings.Count)];
                     break;
                 case RoadSelectionStrategyType.Defensive:
-                    var allyBuildings = Building.Roads.Where(a => Building.Faction == a.Last().GetComponent<Building>().Faction).ToList();
+
+                    var allyBuildings = Building.Roads.Where(a =>
+                    {
+                        if (!BuildingUtils.TryGetBuildingOnCell(a.Last(), out var building))
+                        {
+                            return true;
+                        }
+
+                        return Building.Faction == building.Faction;
+                    }).ToList();
                     if (allyBuildings.Count > 0)
                         return allyBuildings[Random.Range(0, allyBuildings.Count)];
                     break;

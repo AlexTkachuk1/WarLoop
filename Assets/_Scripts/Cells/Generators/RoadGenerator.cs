@@ -12,8 +12,12 @@ namespace _Scripts
         [Header("Parent for roads")]
         [SerializeField] private Transform roadsParent;
 
+        private Dictionary<Vector2Int, Cell> _existingRoadCells = new();
+        
         public void GenerateRoads(int minConnections = 1, int maxConnections = 3)
         {
+            _existingRoadCells.Clear();
+            
             var walkable = MapGenerator.Instance.WalkableCells;
             if (walkable == null || walkable.Count == 0)
                 return;
@@ -47,8 +51,8 @@ namespace _Scripts
                     
                     if (path != null && path.Count > 0)
                     {
-                        tower.Roads.Add(path);
-                        SpawnRoadCells(path);
+                        var road = SpawnRoadCells(path);
+                        tower.Roads.Add(road);
                         connectionsMade++;
                     }
                 }
@@ -60,10 +64,10 @@ namespace _Scripts
                         if (tower.Roads.Count >= minConnections) break;
 
                         var path = pathfinder.FindPath(cell, other);
-                        if (path != null && path.Count > 0 && !tower.Roads.Contains(path))
+                        if (path != null && path.Count > 0)
                         {
-                            tower.Roads.Add(path);
-                            SpawnRoadCells(path);
+                            var road = SpawnRoadCells(path);
+                            tower.Roads.Add(road);
                         }
                     }
                 }
@@ -72,14 +76,72 @@ namespace _Scripts
 
         #region Internal
 
-        private void SpawnRoadCells(List<Cell> path)
+        private List<Cell> SpawnRoadCells(List<Cell> path)
         {
+            var road = new List<Cell>();
+            
             foreach (var c in path)
             {
-                cellFactory.Create(CellType.Road, c.X, c.Y, roadsParent);
+                Vector2Int coord = new Vector2Int(c.X, c.Y);
+                
+                if (_existingRoadCells.TryGetValue(coord, out var existingCell))
+                {
+                    road.Add(existingCell);
+                }
+                else
+                {
+                    var cell = cellFactory.Create(CellType.Road, c.X, c.Y, roadsParent);
+                    
+                    _existingRoadCells[coord] = cell;
+                    
+                    road.Add(cell);
+                }
             }
+            
+            return road;
         }
 
         #endregion
+
+        public IReadOnlyDictionary<Vector2Int, Cell> GetExistingRoadCells()
+        {
+            return _existingRoadCells;
+        }
+        
+        public bool HasRoadAt(int x, int y)
+        {
+            return _existingRoadCells.ContainsKey(new Vector2Int(x, y));
+        }
+        
+        public Cell GetRoadCellAt(int x, int y)
+        {
+            _existingRoadCells.TryGetValue(new Vector2Int(x, y), out var cell);
+            return cell;
+        }
+
+        public void ClearAllRoads()
+        {
+            foreach (var cell in _existingRoadCells.Values)
+            {
+                if (cell != null && cell.gameObject != null)
+                {
+                    Destroy(cell.gameObject);
+                }
+            }
+            
+            _existingRoadCells.Clear();
+            
+            if (BuildingsGenerator.Instance != null)
+            {
+                foreach (var towerCell in BuildingsGenerator.Instance.Towers)
+                {
+                    var building = towerCell.GetComponent<Building>();
+                    if (building != null)
+                    {
+                        building.Roads.Clear();
+                    }
+                }
+            }
+        }
     }
 }

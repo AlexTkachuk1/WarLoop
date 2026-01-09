@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Scripts.Actors.Units;
 using _Scripts.GameLoop;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace _Scripts.Actors
@@ -17,12 +18,14 @@ namespace _Scripts.Actors
             return building;
         }
         
-        public static void CreateUnit(FactionColor factionColor, UnitType unitType, List<Cell> path)
+        public static Unit CreateUnit(FactionColor factionColor, UnitType unitType, List<Cell> path, [CanBeNull] Transform parent = null)
         {
             var prefab = Bootstrap.Instance.GameData.GetUnit(unitType);
-            var unit = Object.Instantiate(prefab, path[0].transform.position, Quaternion.identity);
+            var unit = Object.Instantiate(prefab, path[1].transform.position, Quaternion.identity);
             unit.Init(path, factionColor);
             GameLoopUpdater.Instance.Add(unit);
+            
+            return unit;
         }
     }
 }

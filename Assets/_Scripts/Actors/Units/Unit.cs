@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Actors.Buildings;
 using _Scripts.GameLoop;
+using _Scripts.Helpers;
 using UnityEngine;
 
 namespace _Scripts.Actors.Units
@@ -36,8 +37,19 @@ namespace _Scripts.Actors.Units
 
             transform.position = _positions[0];
 
-            Origin = cells.First().GetComponent<Building>() ?? throw new NullReferenceException("Cell is not Building");
-            Target = cells.Last().GetComponent<Building>() ?? throw new NullReferenceException("Cell is not Building");
+            if (!BuildingUtils.TryGetBuildingOnCell(cells.First(), out var playerBuilding))
+            {
+                throw new NullReferenceException("Cell is not Building");
+            }
+            
+            Origin = playerBuilding;
+            
+            if (!BuildingUtils.TryGetBuildingOnCell(cells.Last(), out var enemyBuilding))
+            {
+                throw new NullReferenceException("Cell is not Building");
+            }
+            
+            Target = enemyBuilding;
         }
 
         public override ProcessFrameResult ProcessFrame()
