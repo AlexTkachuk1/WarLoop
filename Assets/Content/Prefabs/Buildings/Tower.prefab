@@ -683,13 +683,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _factionPrefabs:
-  - {fileID: 4965878645895219639}
-  - {fileID: 1837149367229087326}
-  - {fileID: 3572796750233722502}
-  - {fileID: 6131731293608237804}
+  - {fileID: 8158416982770134199}
+  - {fileID: 2575826621141123413}
+  - {fileID: 1277114086964419690}
+  - {fileID: 4119077158083616384}
   <CurrentHealth>k__BackingField: 10
   <RegenPerSecond>k__BackingField: 1
   <DamagePerSecond>k__BackingField: 1
+  regenInterval: 4
+  attackInterval: 3
   buildingCanvas: {fileID: 4250433525764284238}
   clickableImage: {fileID: 3730048946536186485}
   highlightSprites:
@@ -698,8 +700,6 @@ MonoBehaviour:
   - {fileID: 7534735634971462745}
   - {fileID: 1052407441833636091}
   highlightColor: {r: 0.53949684, g: 0.9622642, b: 0.49474904, a: 1}
-  regenInterval: 4
-  regenAmount: 5
   currentBalanceText: {fileID: 7031682827281434543}
 --- !u!135 &-2050407891801463699
 SphereCollider:

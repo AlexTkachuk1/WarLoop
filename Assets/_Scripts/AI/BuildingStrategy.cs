@@ -36,15 +36,17 @@ namespace _Scripts.AI
         public void ProcessFrame()
         {
             _cooldown -= Time.deltaTime;
-            if (_cooldown > 0)
-                return;
+            
+            if (_cooldown > 0) return;
             
             var road = SelectRoad();
             var unitType = SelectUnitType(road);
+            
             if (Building.TrySpend(Bootstrap.Instance.GameData.GetUnit(unitType).Cost))
             {
                 ActorsFactory.CreateUnit(Building.Faction, unitType, road);
             }
+            
             _cooldown = Bootstrap.Instance.GameData.GetUnitSpawnCooldown(UnitCountStrategy);
         }
 

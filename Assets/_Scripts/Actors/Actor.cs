@@ -12,6 +12,11 @@ namespace _Scripts.Actors
         [field: SerializeField] public float RegenPerSecond { get; private set; }
         [field: SerializeField] public float DamagePerSecond { get; private set; }
         
+                
+        [SerializeField] protected float regenInterval = 4f;
+        protected int regenAmount;
+        protected float regenTimer = 0;
+        
         [SerializeField] protected float attackInterval = 3f;
         protected int attackAmount;
         protected float attackTimer = 0;
@@ -38,8 +43,7 @@ namespace _Scripts.Actors
         public void SpawnUnit(int cost)
         {
             if (cost >= CurrentHealth) return;
-
-            attackAmount = (int)(DamagePerSecond * attackInterval);
+            
             CurrentHealth -= cost;
             UpdateCurrentHealth();
         }
@@ -50,6 +54,9 @@ namespace _Scripts.Actors
         {
             _healthMax = CurrentHealth;
             Faction = factionColor;
+            
+            attackAmount = (int)(DamagePerSecond * attackInterval);
+            regenAmount = (int)(RegenPerSecond * regenInterval);
         }
 
         private void OnDestroy()
@@ -78,30 +85,51 @@ namespace _Scripts.Actors
                 }
                 
                 if (actor.Faction == Faction) continue;
+
+                if (attackTimer == 0)
+                {
+                    attackTimer = Time.realtimeSinceStartup + attackInterval;
+                }
+                else
+                {
+                    if (attackTimer > Time.realtimeSinceStartup) return true;
+
+                    attackTimer = 0;
+                    var isDead = actor.TakeDamage(attackAmount);
+                    if (isDead) actor.Die(this);
                 
-                
-                
-                var isDead = actor.TakeDamage(this);
-                if (isDead) actor.Die(this);
-                
-                return true;
+                    return true;
+                }
             }
 
             return false;
         }
 
-        protected virtual void RegenerateHealth() => CurrentHealth += RegenPerSecond * Time.deltaTime;
-        
-        private bool TakeDamage(Actor attacker)
+        protected virtual void RegenerateHealth()
         {
-            var damageAmount = CalculateIncomingDamage(attacker) * Time.deltaTime;
+            if (regenTimer == 0)
+            {
+                regenTimer = Time.realtimeSinceStartup + regenInterval;
+            }
+            else
+            {
+                if (regenTimer <= Time.realtimeSinceStartup)
+                {
+                    regenTimer = 0;
+                    CurrentHealth += regenAmount;
+                    UpdateCurrentHealth();
+                }
+            }
+        }
+        
+        private bool TakeDamage(float damageAmount)
+        {
             CurrentHealth = Mathf.Max(0, CurrentHealth - damageAmount);
             
             UpdateCurrentHealth();
 
             return CurrentHealth <= 0;
         }
-
 
         protected abstract float CalculateIncomingDamage(Actor attacker);
         

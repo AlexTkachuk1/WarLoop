@@ -33,6 +33,8 @@ namespace _Scripts.Vfx
         
         private void Update()
         {
+            if (_currentAnimations == null) return;
+            
             _time += Time.deltaTime;
 
             if (!_currentAnimations.TryGetSprite(_time, true, out var sprite)) return;

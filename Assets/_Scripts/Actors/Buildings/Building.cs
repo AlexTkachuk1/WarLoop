@@ -18,14 +18,9 @@ namespace _Scripts.Actors.Buildings
         [Header("Highlight Settings")]
         [SerializeField] private SpriteRenderer[] highlightSprites;
         [SerializeField] private Color highlightColor = new Color(1f, 1f, 1f, 0.5f);
-        
-        
-        [SerializeField] protected float regenInterval = 4f;
-        [SerializeField] protected int regenAmount = 5;
        
         [SerializeField] private TMP_Text currentBalanceText;
-        
-        private float _regenTimer = 0;
+
         
         private bool _isPlayerBuilding;
         private FactionColor _factionColor;
@@ -44,23 +39,9 @@ namespace _Scripts.Actors.Buildings
             UpdateCurrentHealth();
         }
 
-        protected override void UpdateCurrentHealth() => currentBalanceText.text = $"{CurrentHealth}";
-        
-        protected override void RegenerateHealth()
+        protected override void UpdateCurrentHealth()
         {
-            if (_regenTimer == 0)
-            {
-                _regenTimer = Time.realtimeSinceStartup + regenInterval;
-            }
-            else
-            {
-                if (_regenTimer <= Time.realtimeSinceStartup)
-                {
-                    _regenTimer = 0;
-                    CurrentHealth += regenAmount;
-                    UpdateCurrentHealth();
-                }
-            }
+            currentBalanceText.text = $"{CurrentHealth}";
         }
         
         public List<Cell> FindRoadContainingCell(Cell targetCell)

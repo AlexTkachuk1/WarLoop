@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3874507895786714740}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 4146112368558259502}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -229,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 5653286021275133688}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -330,7 +330,7 @@ Transform:
   m_GameObject: {fileID: 5671020520029953045}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -456,13 +456,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _factionPrefabs:
-  - {fileID: 5653286021275133688}
-  - {fileID: 3874507895786714740}
-  - {fileID: 5671020520029953045}
-  - {fileID: 4146112368558259502}
+  - {fileID: 7243110491697106742}
+  - {fileID: 8602736325301183554}
+  - {fileID: 881710712882721526}
+  - {fileID: 2554429093585668258}
   <CurrentHealth>k__BackingField: 2
   <RegenPerSecond>k__BackingField: 0
   <DamagePerSecond>k__BackingField: 1
+  regenInterval: 4
+  attackInterval: 3
   _deathEffectPrefab: {fileID: 8144435333034838183, guid: 292e2b3ca2597894b9e220690ac98e7f, type: 3}
   <UnitType>k__BackingField: 1
   <Speed>k__BackingField: 1
