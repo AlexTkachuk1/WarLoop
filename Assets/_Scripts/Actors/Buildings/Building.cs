@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 using Unit = _Scripts.Actors.Units.Unit;
 
 namespace _Scripts.Actors.Buildings
@@ -13,7 +14,6 @@ namespace _Scripts.Actors.Buildings
     {
         [Header("UI Settings")]
         [SerializeField] private Canvas buildingCanvas;
-        [SerializeField] private Image clickableImage;
         
         [Header("Highlight Settings")]
         [SerializeField] private SpriteRenderer[] highlightSprites;
@@ -26,7 +26,8 @@ namespace _Scripts.Actors.Buildings
         private FactionColor _factionColor;
         private Vector3 _originalScale;
         private Color _originalSpriteColor = Color.white;
-        
+        private float _healthOverflowTimer;
+
         public List<List<Cell>> Roads { get; private set; } = new();
         
         public void Init(FactionColor factionColor)
@@ -35,13 +36,35 @@ namespace _Scripts.Actors.Buildings
             InitInternal(factionColor);
             
             _isPlayerBuilding = GameplayController.Instance.PlayerColor == _factionColor;
-            clickableImage.raycastTarget = _isPlayerBuilding;
             UpdateCurrentHealth();
+        }
+
+        public override ProcessFrameResult ProcessFrame()
+        {
+            if (_healthOverflowTimer > 0)
+            {
+                _healthOverflowTimer -= Time.deltaTime;
+                if (_healthOverflowTimer <= 0)
+                {
+                    CurrentHealth = 1;
+                    UpdateCurrentHealth();
+                }
+            }
+            
+            RegenerateHealth();
+            if (CurrentHealth > 999 && _healthOverflowTimer <= 0)
+            {
+                _healthOverflowTimer = 10;
+                CurrentHealth = 1000000000;
+                UpdateCurrentHealth();
+            }
+
+            return base.ProcessFrame();
         }
 
         protected override void UpdateCurrentHealth()
         {
-            currentBalanceText.text = $"{CurrentHealth}";
+            currentBalanceText.text = CurrentHealth < 1000 ? $"{CurrentHealth:0}" : short.MinValue.ToString();
         }
         
         public List<Cell> FindRoadContainingCell(Cell targetCell)
@@ -116,8 +139,11 @@ namespace _Scripts.Actors.Buildings
         {
             if (unit.Faction != Faction) 
                 return false;
-            
-            CurrentHealth += unit.Cost * unit.HealthPercentage;
+
+            var absorbAmount = unit.Cost * unit.HealthPercentage;
+            if (Random.value < 0.1f)
+                absorbAmount *= 2;
+            CurrentHealth += absorbAmount;
             unit.Die(this);
             UpdateCurrentHealth();
             return true;
@@ -151,11 +177,6 @@ namespace _Scripts.Actors.Buildings
             
             _factionColor = Faction;
             _isPlayerBuilding = GameplayController.Instance.PlayerColor == _factionColor;
-            
-            if (clickableImage != null)
-            {
-                clickableImage.raycastTarget = _isPlayerBuilding;
-            }
         }
         
         #endregion
