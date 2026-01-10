@@ -169,7 +169,7 @@ namespace _Scripts.Actors.Buildings
             return isAvailable;
         }
 
-        protected override float CalculateIncomingDamage(Actor attacker) => attacker.DamagePerSecond;
+        protected override float CalculateIncomingDamage(Actor attacker, float damageAmount) => damageAmount;
 
         private void Capture(Actor attacker)
         {

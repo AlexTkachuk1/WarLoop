@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Actors.Buildings;
+using _Scripts.Controllers;
 using _Scripts.GameLoop;
 using _Scripts.Helpers;
 using UnityEngine;
@@ -83,15 +84,18 @@ namespace _Scripts.Actors.Units
             Destroy(gameObject);
         }
 
-        protected override float CalculateIncomingDamage(Actor attacker)
+        protected override float CalculateIncomingDamage(Actor attacker, float damageAmount)
         {
+            if (Faction == GameplayController.Instance.PlayerColor)
+                damageAmount *= 1.25f;
+            
             if (attacker is not Unit attackerUnit)
-                return attacker.DamagePerSecond;
+                return damageAmount;
 
             if (HasAdvantage(attackerUnit.UnitType, UnitType))
-                return attacker.DamagePerSecond * Bootstrap.Instance.GameData.RockPaperScissorsDamageMod;
+                return damageAmount * Bootstrap.Instance.GameData.RockPaperScissorsDamageMod;
 
-            return attacker.DamagePerSecond;
+            return damageAmount;
         }
         
         private void BuildPathCache()
@@ -162,7 +166,7 @@ namespace _Scripts.Actors.Units
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            _frozenTimer = 0.25f;
+            _frozenTimer = 5f;
         }
     }
 }

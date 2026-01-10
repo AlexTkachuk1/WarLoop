@@ -352,7 +352,7 @@ MonoBehaviour:
   _deathEffectPrefab: {fileID: 8144435333034838183, guid: 292e2b3ca2597894b9e220690ac98e7f, type: 3}
   _healthBar: {fileID: 5546124388144405479}
   <UnitType>k__BackingField: 2
-  <Speed>k__BackingField: 1
+  <Speed>k__BackingField: 0.8
   <Cost>k__BackingField: 60
   <Sprites>k__BackingField:
   - {fileID: 7864526614209341243}

@@ -102,7 +102,7 @@ namespace _Scripts.Actors
                     if (attackTimer > Time.realtimeSinceStartup) return true;
 
                     attackTimer = 0;
-                    var isDead = actor.TakeDamage(attackAmount);
+                    var isDead = actor.TakeDamage(this, attackAmount);
                     if (isDead) actor.Die(this);
                 
                     return true;
@@ -132,16 +132,16 @@ namespace _Scripts.Actors
             }
         }
         
-        private bool TakeDamage(float damageAmount)
+        private bool TakeDamage(Actor attacker, float damageAmount)
         {
-            CurrentHealth = Mathf.Max(0, CurrentHealth - damageAmount);
+            CurrentHealth = Mathf.Max(0, CurrentHealth - CalculateIncomingDamage(attacker, damageAmount));
             
             UpdateCurrentHealth();
 
             return CurrentHealth <= 0;
         }
 
-        protected abstract float CalculateIncomingDamage(Actor attacker);
+        protected abstract float CalculateIncomingDamage(Actor attacker, float damageAmount);
         
         private void OnTriggerEnter(Collider other)
         {
