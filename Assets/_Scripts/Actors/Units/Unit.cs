@@ -6,12 +6,14 @@ using _Scripts.GameLoop;
 using _Scripts.Helpers;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace _Scripts.Actors.Units
 {
     public class Unit : Actor, IPointerClickHandler
     {
         [SerializeField] private GameObject _deathEffectPrefab;
+        [SerializeField] private Image _healthBar;
 
         [field: SerializeField] public UnitType UnitType { get; private set; }
         [field: SerializeField] public float Speed { get; private set; }
@@ -54,6 +56,7 @@ namespace _Scripts.Actors.Units
 
         public override ProcessFrameResult ProcessFrame()
         {
+            _healthBar.fillAmount = HealthPercentage;
             if (_frozenTimer > 0)
             {
                 _frozenTimer -= Time.deltaTime;
