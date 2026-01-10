@@ -75,16 +75,12 @@ namespace _Scripts.Controllers
             if (roads.Count == 0)  return;
             if (roads.Count > 1 && highlight) _crossroadCellHighlighted = true;
 
-            if (!highlight) KillHighlightRoads(_selectedBuilding.Roads);
-            else
+            foreach (var road in roads)
             {
-                foreach (var road in roads)
+                foreach (var cell in road)
                 {
-                    foreach (var cell in road)
-                    {
-                        var roadCell = (RoadCell)cell;
-                        roadCell.Highlight2(highlight);
-                    }
+                    var roadCell = (RoadCell)cell;
+                    roadCell.Highlight2(highlight);
                 }
             }
         }
