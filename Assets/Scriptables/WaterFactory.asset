@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300c7029e88a4e0fa2270f8e1b3d7b7f, type: 3}
+  m_Name: WaterFactory
+  m_EditorClassIdentifier: 
+  prefabs:
+  - type: 18
+    prefab: {fileID: 917107693059683710, guid: af5e172436fb7b346b599f2587643b4c, type: 3}
