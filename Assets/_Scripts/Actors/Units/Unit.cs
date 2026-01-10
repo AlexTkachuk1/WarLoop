@@ -18,6 +18,7 @@ namespace _Scripts.Actors.Units
         [field: SerializeField] public UnitType UnitType { get; private set; }
         [field: SerializeField] public float Speed { get; private set; }
         [field: SerializeField] public float Cost { get; private set; }
+        [field: SerializeField] public SpriteRenderer[] Sprites { get; private set; }
         
         private List<Vector2> _positions;
         private float[] _segmentLengths;

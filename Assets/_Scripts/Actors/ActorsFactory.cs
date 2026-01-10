@@ -22,6 +22,16 @@ namespace _Scripts.Actors
         {
             var prefab = Bootstrap.Instance.GameData.GetUnit(unitType);
             var unit = Object.Instantiate(prefab, path[1].transform.position, Quaternion.identity);
+
+            if (path[1].transform.position.x > path[^1].transform.position.x
+                || path[1].transform.position.y < path[^1].transform.position.y)
+            {
+                foreach (var sprite in unit.Sprites)
+                {
+                    sprite.flipX = true;
+                }
+            }
+            
             unit.Init(path, factionColor);
             GameLoopUpdater.Instance.Add(unit);
             

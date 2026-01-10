@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8e2823f48b41079bd529a28aaf7653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _default: {fileID: 0}
   _run: {fileID: 11400000, guid: faa5a8f5ea44a2843803c9fe60bd85ea, type: 2}
   _idle: {fileID: 11400000, guid: 127d35364ae7600468bc66840b2f5ba1, type: 2}
   _attack: {fileID: 11400000, guid: ac7c0687c8f03c34c90ce797eeadae5f, type: 2}
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8e2823f48b41079bd529a28aaf7653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _default: {fileID: 0}
   _run: {fileID: 11400000, guid: 851471cd01f18fd4c89161ba7db34068, type: 2}
   _idle: {fileID: 11400000, guid: 0f735707250a5d04d9335a7856ede660, type: 2}
   _attack: {fileID: 11400000, guid: 3047a4cc8f73cf44a88ddc89b5a94e65, type: 2}
@@ -247,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8e2823f48b41079bd529a28aaf7653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _default: {fileID: 0}
   _run: {fileID: 11400000, guid: 8e460b5f4329ac242833b556a2f6c0cd, type: 2}
   _idle: {fileID: 11400000, guid: b4c233dbb110f894aabe95f0158f06cd, type: 2}
   _attack: {fileID: 11400000, guid: aa3953537add4ea46ae09620d1930b7f, type: 2}
@@ -348,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8e2823f48b41079bd529a28aaf7653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _default: {fileID: 0}
   _run: {fileID: 11400000, guid: fc83733ccd1aec2469ac0c329c895ed6, type: 2}
   _idle: {fileID: 11400000, guid: 9e8c4034f696fb6439a487d623f224a9, type: 2}
   _attack: {fileID: 11400000, guid: 384e4cd45810fe9449913ea33db8c562, type: 2}
@@ -479,6 +483,11 @@ MonoBehaviour:
   <UnitType>k__BackingField: 1
   <Speed>k__BackingField: 1
   <Cost>k__BackingField: 50
+  <Sprites>k__BackingField:
+  - {fileID: 163675736763349587}
+  - {fileID: 7450459719602846325}
+  - {fileID: 2438076380920650822}
+  - {fileID: 4714789536817274192}
 --- !u!135 &-7418643685069343888
 SphereCollider:
   m_ObjectHideFlags: 0
