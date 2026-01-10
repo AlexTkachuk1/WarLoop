@@ -72,6 +72,7 @@ MonoBehaviour:
   attackInterval: 0.6
   _deathEffectPrefab: {fileID: 8144435333034838183, guid: 292e2b3ca2597894b9e220690ac98e7f, type: 3}
   _healthBar: {fileID: 4434769699677150200}
+  _raycaster: {fileID: 6496204636328803432}
   <UnitType>k__BackingField: 0
   <Speed>k__BackingField: 0.8
   <Cost>k__BackingField: 55

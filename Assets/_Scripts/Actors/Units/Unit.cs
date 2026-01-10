@@ -15,6 +15,7 @@ namespace _Scripts.Actors.Units
     {
         [SerializeField] private GameObject _deathEffectPrefab;
         [SerializeField] private Image _healthBar;
+        [SerializeField] private GraphicRaycaster _raycaster;
 
         [field: SerializeField] public UnitType UnitType { get; private set; }
         [field: SerializeField] public float Speed { get; private set; }
@@ -64,7 +65,10 @@ namespace _Scripts.Actors.Units
                 _frozenTimer -= Time.deltaTime;
                 return ProcessFrameResult.Bug;
             }
-            
+
+            if (!_raycaster.enabled) 
+                _raycaster.enabled = true;
+
             var result = base.ProcessFrame();
             if (result == ProcessFrameResult.Attacking)
                 return result;
@@ -167,6 +171,7 @@ namespace _Scripts.Actors.Units
         public void OnPointerClick(PointerEventData eventData)
         {
             _frozenTimer = 5f;
+            _raycaster.enabled = false;
         }
     }
 }
