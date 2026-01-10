@@ -19,6 +19,9 @@ namespace _Scripts.Vfx
         {
             switch (result)
             {
+                case ProcessFrameResult.Bug:
+                    _currentAnimations = null;
+                    break;
                 case ProcessFrameResult.Idle:
                     _currentAnimations = _idle;
                     break;

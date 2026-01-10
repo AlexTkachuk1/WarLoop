@@ -42,7 +42,7 @@ namespace _Scripts.Actors
 
         public bool SpawnUnit(int cost)
         {
-            if (cost > CurrentHealth) return false;
+            if (CurrentHealth - cost < 1) return false;
             
             CurrentHealth -= cost;
             UpdateCurrentHealth();

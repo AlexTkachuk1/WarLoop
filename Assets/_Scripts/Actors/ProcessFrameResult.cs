@@ -5,6 +5,7 @@
         Idle,
         Attacking,
         Running,
-        ScheduledForDisposal
+        ScheduledForDisposal,
+        Bug
     }
 }

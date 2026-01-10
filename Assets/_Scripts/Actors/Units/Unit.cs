@@ -5,10 +5,11 @@ using _Scripts.Actors.Buildings;
 using _Scripts.GameLoop;
 using _Scripts.Helpers;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace _Scripts.Actors.Units
 {
-    public class Unit : Actor
+    public class Unit : Actor, IPointerClickHandler
     {
         [SerializeField] private GameObject _deathEffectPrefab;
 
@@ -20,6 +21,7 @@ namespace _Scripts.Actors.Units
         private float[] _segmentLengths;
         private float _totalLength;
         private float _distanceTraveled;
+        private float _frozenTimer;
 
         public Building Origin { get; private set; }
         public Building Target { get; private set; }
@@ -52,6 +54,12 @@ namespace _Scripts.Actors.Units
 
         public override ProcessFrameResult ProcessFrame()
         {
+            if (_frozenTimer > 0)
+            {
+                _frozenTimer -= Time.deltaTime;
+                return ProcessFrameResult.Bug;
+            }
+            
             var result = base.ProcessFrame();
             if (result == ProcessFrameResult.Attacking)
                 return result;
@@ -147,5 +155,10 @@ namespace _Scripts.Actors.Units
         
         public override void Animate(ProcessFrameResult result) 
             => CurrentAnimation.Animate(result);
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            _frozenTimer = 0.25f;
+        }
     }
 }
