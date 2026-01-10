@@ -23,5 +23,6 @@
         Birch = 16,
         Ash = 17,
         
+        Water = 18,
     }
 }
