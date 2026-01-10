@@ -602,7 +602,7 @@ MonoBehaviour:
     against Lancers.
 
 
-    <color=#0f0fff>TODO: fix pointer click bug</color>'
+    <color=#9f9fff>TODO: fix pointer click bug</color>'
 --- !u!1 &7215838141720193853
 GameObject:
   m_ObjectHideFlags: 0

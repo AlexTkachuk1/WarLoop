@@ -319,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Try Agane!
+  m_text: Try Again!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf80cfd725110294d9a394259cbadc5d, type: 2}
   m_sharedMaterial: {fileID: 1664364753802664983, guid: cf80cfd725110294d9a394259cbadc5d, type: 2}
@@ -424,8 +424,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -500, y: 0.0000038146973}
-  m_SizeDelta: {x: 1000, y: 0}
+  m_AnchoredPosition: {x: -1.3195, y: 2.4928}
+  m_SizeDelta: {x: 767.8777, y: 601.9263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &203756237986745802
 CanvasRenderer:
@@ -500,7 +500,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 60}
+  m_SizeDelta: {x: 220, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7867389047381651785
 CanvasRenderer:
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279511613
-  m_fontColor: {r: 0.23773581, g: 0.16635367, b: 0.08029189, a: 0.9137255}
+  m_fontColor: {r: 0.9245283, g: 0.9054117, b: 0.8242257, a: 0.9137255}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2103,7 +2103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -120}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3533648453902260149
@@ -2788,7 +2788,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2408183722503086697
 CanvasRenderer:
@@ -2811,7 +2811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9137255}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

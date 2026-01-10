@@ -19,8 +19,7 @@ MonoBehaviour:
     UnitSpawnCooldownRange: {x: 0.5, y: 1.5}
   - UnitCountStrategy: 2
     UnitSpawnCooldownRange: {x: 0.5, y: 3.5}
-  <Player>k__BackingField: 0
-  <RockPaperScissorsDamageMod>k__BackingField: 2
+  <RockPaperScissorsDamageMod>k__BackingField: 5
   <BuildingPrefab>k__BackingField: {fileID: 3403343590524338537, guid: d4e80290a4287af41a3e9865383bb63a, type: 3}
   <UnitPrefabs>k__BackingField:
   - {fileID: 8283422972078131938, guid: c8c3da2f13bd73541bf914331d7b80a5, type: 3}

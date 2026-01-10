@@ -198,7 +198,7 @@ MonoBehaviour:
     against Archers.
 
 
-    <color=#0f0fff>TODO: fix pointer click bug</color>'
+    <color=#9f9fff>TODO: fix pointer click bug</color>'
 --- !u!1 &5505922078418311107
 GameObject:
   m_ObjectHideFlags: 0

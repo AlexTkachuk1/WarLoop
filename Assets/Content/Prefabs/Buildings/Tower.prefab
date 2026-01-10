@@ -369,10 +369,10 @@ MonoBehaviour:
   _text: '<b>Blue tower</b>. Massive building that spawns fighters along the road.
 
 
-    <color=#0f0fff>TODO:
+    <color=#9f9fff>TODO:
     fix ally unit double absorbtion bug</color>
 
-    <color=#0f0fff>TODO: fix tower
+    <color=#9f9fff>TODO: fix tower
     1000+ power overflow</color>'
 --- !u!1 &2257001725233860439
 GameObject:
@@ -884,10 +884,10 @@ MonoBehaviour:
   _text: '<b>Yellow tower</b>. Massive building that spawns fighters along the road.
 
 
-    <color=#0f0fff>TODO:
+    <color=#9f9fff>TODO:
     fix ally unit double absorbtion bug</color>
 
-    <color=#0f0fff>TODO: fix tower
+    <color=#9f9fff>TODO: fix tower
     1000+ power overflow</color>'
 --- !u!1 &4965878645895219639
 GameObject:
@@ -1007,10 +1007,10 @@ MonoBehaviour:
   _text: '<b>Red tower</b>. Massive building that spawns fighters along the road.
 
 
-    <color=#0f0fff>TODO:
+    <color=#9f9fff>TODO:
     fix ally unit double absorbtion bug</color>
 
-    <color=#0f0fff>TODO: fix tower
+    <color=#9f9fff>TODO: fix tower
     1000+ power overflow</color>'
 --- !u!1 &5945407388238397575
 GameObject:
@@ -1205,10 +1205,10 @@ MonoBehaviour:
   _text: '<b>Purple tower</b>. Massive building that spawns fighters along the road.
 
 
-    <color=#0f0fff>TODO:
+    <color=#9f9fff>TODO:
     fix ally unit double absorbtion bug</color>
 
-    <color=#0f0fff>TODO: fix tower
+    <color=#9f9fff>TODO: fix tower
     1000+ power overflow</color>'
 --- !u!1 &6204317183119409254
 GameObject:
