@@ -841,7 +841,7 @@ MonoBehaviour:
   moveSpeed: 10
   screenEdgeSize: 20
   dragMouseButton: 0
-  dragSpeed: 15
+  dragSpeed: 25
 --- !u!1 &1382888563561876982
 GameObject:
   m_ObjectHideFlags: 0

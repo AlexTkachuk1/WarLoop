@@ -21,7 +21,8 @@ namespace _Scripts.UI
             else
                 _pointers.Remove(instancer);
             
-            gameObject.SetActive(_pointers.Count > 0);
+            if (this)
+                gameObject.SetActive(_pointers.Count > 0);
         }
 
         public void SetText(string text)
