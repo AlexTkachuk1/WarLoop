@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Lancer_Red_Run_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: 8e9c530adb11de0429cd86da44109f0e, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: 338789462, guid: 7740ccfe056ce8246b42c4e97325b4d1, type: 3}
+  - time: 0.1
+    sprite: {fileID: 828905802, guid: 7740ccfe056ce8246b42c4e97325b4d1, type: 3}
+  - time: 0.2
+    sprite: {fileID: -743764392, guid: 7740ccfe056ce8246b42c4e97325b4d1, type: 3}
+  - time: 0.3
+    sprite: {fileID: -1489813247, guid: 7740ccfe056ce8246b42c4e97325b4d1, type: 3}
+  - time: 0.4
+    sprite: {fileID: -1817554677, guid: 7740ccfe056ce8246b42c4e97325b4d1, type: 3}
+  - time: 0.5
+    sprite: {fileID: -2125123144, guid: 7740ccfe056ce8246b42c4e97325b4d1, type: 3}

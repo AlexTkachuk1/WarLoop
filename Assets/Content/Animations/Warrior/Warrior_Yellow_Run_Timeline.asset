@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Warrior_Yellow_Run_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: 4bde25f7ab8b0764bb0080afafef5237, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: -136087843, guid: 7a719ebb3083c5b4093648cd8ddd2b93, type: 3}
+  - time: 0.1
+    sprite: {fileID: -134611926, guid: 7a719ebb3083c5b4093648cd8ddd2b93, type: 3}
+  - time: 0.2
+    sprite: {fileID: -896500743, guid: 7a719ebb3083c5b4093648cd8ddd2b93, type: 3}
+  - time: 0.3
+    sprite: {fileID: -668612147, guid: 7a719ebb3083c5b4093648cd8ddd2b93, type: 3}
+  - time: 0.4
+    sprite: {fileID: 1894406070, guid: 7a719ebb3083c5b4093648cd8ddd2b93, type: 3}
+  - time: 0.5
+    sprite: {fileID: -1105808588, guid: 7a719ebb3083c5b4093648cd8ddd2b93, type: 3}

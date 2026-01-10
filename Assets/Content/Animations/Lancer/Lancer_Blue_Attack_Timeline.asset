@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Lancer_Blue_Attack_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: 7c25512f01280934cb25ec8819d689fd, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: 1048676751, guid: d03770da1951aa547b7f7365f88831b1, type: 3}
+  - time: 0.25
+    sprite: {fileID: -1629029925, guid: d03770da1951aa547b7f7365f88831b1, type: 3}
+  - time: 0.5
+    sprite: {fileID: -1805774855, guid: d03770da1951aa547b7f7365f88831b1, type: 3}

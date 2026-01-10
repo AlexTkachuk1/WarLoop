@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Archer_Blue_Attack_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: 0bd38a95c8ca5e94aa6fd38f840bb0f1, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: -1329757829, guid: 3305a27f9d32c9b4ab987fc687ac8fbd, type: 3}
+  - time: 0.06666667
+    sprite: {fileID: -978153967, guid: 3305a27f9d32c9b4ab987fc687ac8fbd, type: 3}
+  - time: 0.15
+    sprite: {fileID: 779841566, guid: 3305a27f9d32c9b4ab987fc687ac8fbd, type: 3}
+  - time: 0.21666667
+    sprite: {fileID: -617411593, guid: 3305a27f9d32c9b4ab987fc687ac8fbd, type: 3}
+  - time: 0.28333333
+    sprite: {fileID: 1928699816, guid: 3305a27f9d32c9b4ab987fc687ac8fbd, type: 3}
+  - time: 0.35
+    sprite: {fileID: -1515769806, guid: 3305a27f9d32c9b4ab987fc687ac8fbd, type: 3}
+  - time: 0.43333334
+    sprite: {fileID: 32769960, guid: 3305a27f9d32c9b4ab987fc687ac8fbd, type: 3}
+  - time: 0.5
+    sprite: {fileID: -1180362693, guid: 3305a27f9d32c9b4ab987fc687ac8fbd, type: 3}

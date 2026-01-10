@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: Lancer_Yellow_Run
   serializedVersion: 7
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -43,23 +43,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: -862236592, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
-    - {fileID: 1026191407, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
-    - {fileID: 1735034069, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
-    - {fileID: -856843827, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
-    - {fileID: 1138232610, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
-    - {fileID: -961133883, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

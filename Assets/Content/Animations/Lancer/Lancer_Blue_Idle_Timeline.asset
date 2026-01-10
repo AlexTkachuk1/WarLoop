@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Lancer_Blue_Idle_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: 74708f6c3d0b75548a1563596bb0a440, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: 927012636, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.05
+    sprite: {fileID: -1707199247, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.083333336
+    sprite: {fileID: -189181825, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.13333334
+    sprite: {fileID: -1560431237, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.18333334
+    sprite: {fileID: -445793135, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.23333333
+    sprite: {fileID: 890963320, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.26666668
+    sprite: {fileID: 534985543, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.31666666
+    sprite: {fileID: -168998180, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.36666667
+    sprite: {fileID: 262848827, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.41666666
+    sprite: {fileID: -1441567365, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.45
+    sprite: {fileID: 1448564404, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}
+  - time: 0.5
+    sprite: {fileID: 1451854890, guid: c3a82a55508005a46a27299bfbeb10fe, type: 3}

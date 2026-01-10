@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Archer_Purple_Run_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: f7856a641c941454c91d992863f5ad79, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: 1035242805, guid: 6c92626a1a52afc4ba2a7794a47037d5, type: 3}
+  - time: 0.16666667
+    sprite: {fileID: 1109339415, guid: 6c92626a1a52afc4ba2a7794a47037d5, type: 3}
+  - time: 0.33333334
+    sprite: {fileID: 2124301576, guid: 6c92626a1a52afc4ba2a7794a47037d5, type: 3}
+  - time: 0.5
+    sprite: {fileID: 836815804, guid: 6c92626a1a52afc4ba2a7794a47037d5, type: 3}

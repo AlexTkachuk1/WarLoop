@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Archer_Yellow_Idle_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: de4db7a712511054c9c5cbd67be9c914, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: 968256808, guid: 98bca5682e4ab064ea20e46acdeb668e, type: 3}
+  - time: 0.1
+    sprite: {fileID: 1863842098, guid: 98bca5682e4ab064ea20e46acdeb668e, type: 3}
+  - time: 0.2
+    sprite: {fileID: 1747357657, guid: 98bca5682e4ab064ea20e46acdeb668e, type: 3}
+  - time: 0.3
+    sprite: {fileID: 1345848764, guid: 98bca5682e4ab064ea20e46acdeb668e, type: 3}
+  - time: 0.4
+    sprite: {fileID: 126684561, guid: 98bca5682e4ab064ea20e46acdeb668e, type: 3}
+  - time: 0.5
+    sprite: {fileID: -1878810649, guid: 98bca5682e4ab064ea20e46acdeb668e, type: 3}

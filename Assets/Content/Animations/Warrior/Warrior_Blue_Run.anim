@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: Warrior_Blue_Run
   serializedVersion: 7
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -43,23 +43,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: 285447444, guid: 09ce5ab636fddc646ad594564ba35b6f, type: 3}
-    - {fileID: -177017109, guid: 09ce5ab636fddc646ad594564ba35b6f, type: 3}
-    - {fileID: -1604181729, guid: 09ce5ab636fddc646ad594564ba35b6f, type: 3}
-    - {fileID: 960288376, guid: 09ce5ab636fddc646ad594564ba35b6f, type: 3}
-    - {fileID: -1416883700, guid: 09ce5ab636fddc646ad594564ba35b6f, type: 3}
-    - {fileID: -90828745, guid: 09ce5ab636fddc646ad594564ba35b6f, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Lancer_Purple_Attack_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: 1103d967e7780b34da33a6d422eb2e0c, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: 562572798, guid: d501623cfec45bd44ad76a385d45daea, type: 3}
+  - time: 0.25
+    sprite: {fileID: -897514911, guid: d501623cfec45bd44ad76a385d45daea, type: 3}
+  - time: 0.5
+    sprite: {fileID: -1598734143, guid: d501623cfec45bd44ad76a385d45daea, type: 3}

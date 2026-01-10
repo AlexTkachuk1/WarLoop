@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14079c3d903c493eba0a67f9ecd11a76, type: 3}
+  m_Name: Lancer_Yellow_Run_Timeline
+  m_EditorClassIdentifier: 
+  sourceClip: {fileID: 7400000, guid: 1ebf792ea4351f7419f4e6346da2598e, type: 2}
+  length: 0.51666665
+  frameRate: 60
+  keys:
+  - time: 0
+    sprite: {fileID: -862236592, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
+  - time: 0.1
+    sprite: {fileID: 1026191407, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
+  - time: 0.2
+    sprite: {fileID: 1735034069, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
+  - time: 0.3
+    sprite: {fileID: -856843827, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
+  - time: 0.4
+    sprite: {fileID: 1138232610, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}
+  - time: 0.5
+    sprite: {fileID: -961133883, guid: 1cc255449eca9ca408951b7d282b4dd5, type: 3}

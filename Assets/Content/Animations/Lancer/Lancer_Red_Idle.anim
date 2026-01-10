@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: Lancer_Red_Idle
   serializedVersion: 7
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -55,29 +55,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: -1114827872, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: -1186439331, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: 1311875884, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: 1571599823, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: 2134403582, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: -956335547, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: 1054573068, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: -1052382681, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: -607038067, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: -715759064, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: 2023604961, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
-    - {fileID: -1862585840, guid: 0cd998baba60ada4f83bef9bb43604e6, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

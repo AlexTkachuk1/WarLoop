@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.Vfx;
 using UnityEngine;
 
 namespace _Scripts.Actors
 {
     public abstract class Actor : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _factionPrefabs;
+        [SerializeField] private ActorAnimation[] _factionPrefabs;
         
         [field: SerializeField] public float CurrentHealth { get; protected set; }
         [field: SerializeField] public float RegenPerSecond { get; private set; }
@@ -18,10 +19,12 @@ namespace _Scripts.Actors
             protected set
             {
                 _faction = value;
-                foreach (var factionPrefab in _factionPrefabs) factionPrefab.SetActive(false);
-                _factionPrefabs[(int)_faction].SetActive(true);
+                foreach (var factionPrefab in _factionPrefabs) factionPrefab.gameObject.SetActive(false);
+                _factionPrefabs[(int)_faction].gameObject.SetActive(true);
             }
         }
+
+        protected ActorAnimation CurrentAnimation => _factionPrefabs[(int)_faction];
 
         public float HealthPercentage => Mathf.Clamp01(CurrentHealth / _healthMax);
 
@@ -117,18 +120,6 @@ namespace _Scripts.Actors
             _actorsInRange.Remove(actor);
         }
 
-        public void Animate(ProcessFrameResult result)
-        {
-            // TODO
-            switch (result)
-            {
-                case ProcessFrameResult.Idle:
-                    break;
-                case ProcessFrameResult.Attacking:
-                    break;
-                case ProcessFrameResult.Running:
-                    break;
-            }
-        }
+        public virtual void Animate(ProcessFrameResult result) { }
     }
 }

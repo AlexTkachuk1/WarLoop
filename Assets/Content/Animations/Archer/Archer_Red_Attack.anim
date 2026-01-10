@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: Archer_Red_Attack
   serializedVersion: 7
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -47,25 +47,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: -1225732836, guid: 067fd432fda8bea43a37b86368851400, type: 3}
-    - {fileID: -1483963875, guid: 067fd432fda8bea43a37b86368851400, type: 3}
-    - {fileID: -383926911, guid: 067fd432fda8bea43a37b86368851400, type: 3}
-    - {fileID: 626267989, guid: 067fd432fda8bea43a37b86368851400, type: 3}
-    - {fileID: 1341577680, guid: 067fd432fda8bea43a37b86368851400, type: 3}
-    - {fileID: 2082789816, guid: 067fd432fda8bea43a37b86368851400, type: 3}
-    - {fileID: 1283273581, guid: 067fd432fda8bea43a37b86368851400, type: 3}
-    - {fileID: -1517853698, guid: 067fd432fda8bea43a37b86368851400, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -147,5 +147,8 @@ namespace _Scripts.Actors.Units
             transform.position = pos;
             return true;
         }
+        
+        public override void Animate(ProcessFrameResult result) 
+            => CurrentAnimation.Animate(result);
     }
 }
