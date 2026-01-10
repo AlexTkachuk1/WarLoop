@@ -57,7 +57,7 @@ namespace _Scripts.AI
                     {
                         if (!BuildingUtils.TryGetBuildingOnCell(a.Last(), out var building))
                         {
-                            return true;
+                            throw new Exception("Has no such building");
                         }
 
                         return Building.Faction != building.Faction;
@@ -71,7 +71,7 @@ namespace _Scripts.AI
                     {
                         if (!BuildingUtils.TryGetBuildingOnCell(a.Last(), out var building))
                         {
-                            return true;
+                            throw new Exception("Has no such building");
                         }
 
                         return Building.Faction == building.Faction;
@@ -92,9 +92,11 @@ namespace _Scripts.AI
                 case UnitTypeStrategyType.SpawnPrioritizedRandomType:
                     return Random.value < Bootstrap.Instance.GameData.PrioritizedUnitTypeChance ? _prioritizedType : GetRandomUnitType();
                 case UnitTypeStrategyType.SpawnCounterType:
+                    if (!BuildingUtils.TryGetBuildingOnCell(road.Last(), out var targetBuilding)) throw new Exception("Has no such building");
+                    
                     var incomingUnits = GameLoopUpdater.Instance.Actors
                         .OfType<Unit>()
-                        .Where(a => a.Target == Building && BuildingUtils.TryGetBuildingOnCell(road.Last(), out var origin) && a.Origin == origin)
+                        .Where(a => a.Target == Building && a.Origin == targetBuilding)
                         .GroupBy(a => a.UnitType)
                         .Select(a => (a.Key, a.Count()))
                         .ToList();

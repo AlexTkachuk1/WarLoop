@@ -20,8 +20,8 @@ namespace _Scripts.Actors.Buildings
         [SerializeField] private Color highlightColor = new Color(1f, 1f, 1f, 0.5f);
         
         
-        [SerializeField] private float regenInterval = 4f;
-        [SerializeField] private int regenAmount = 5;
+        [SerializeField] protected float regenInterval = 4f;
+        [SerializeField] protected int regenAmount = 5;
        
         [SerializeField] private TMP_Text currentBalanceText;
         

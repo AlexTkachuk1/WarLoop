@@ -105,6 +105,7 @@ namespace _Scripts
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (!SelectedUnitComponent.Instance) return;
             if (!SelectedUnitComponent.Instance.UnitTypeSelected) return;
             
             if (eventData.button == PointerEventData.InputButton.Left)

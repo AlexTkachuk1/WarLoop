@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using _Scripts.Vfx;
 using UnityEngine;
 
@@ -13,6 +12,10 @@ namespace _Scripts.Actors
         [field: SerializeField] public float RegenPerSecond { get; private set; }
         [field: SerializeField] public float DamagePerSecond { get; private set; }
         
+        [SerializeField] protected float attackInterval = 3f;
+        protected int attackAmount;
+        protected float attackTimer = 0;
+
         public FactionColor Faction
         {
             get => _faction;
@@ -35,7 +38,8 @@ namespace _Scripts.Actors
         public void SpawnUnit(int cost)
         {
             if (cost >= CurrentHealth) return;
-            
+
+            attackAmount = (int)(DamagePerSecond * attackInterval);
             CurrentHealth -= cost;
             UpdateCurrentHealth();
         }
@@ -73,12 +77,13 @@ namespace _Scripts.Actors
                     continue;
                 }
                 
-                if (actor.Faction == Faction)
-                    continue;
+                if (actor.Faction == Faction) continue;
+                
+                
                 
                 var isDead = actor.TakeDamage(this);
-                if (isDead)
-                    actor.Die(this);
+                if (isDead) actor.Die(this);
+                
                 return true;
             }
 
