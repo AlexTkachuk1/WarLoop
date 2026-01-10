@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 namespace _Scripts
 {
-    public class MapGenerator : Singleton<MapGenerator>
+    public class MapGenerator : StaticInstance<MapGenerator>
     {
         [FormerlySerializedAs("width")]
         [Header("Map Size")]

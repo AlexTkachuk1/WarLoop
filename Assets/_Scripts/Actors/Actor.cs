@@ -54,8 +54,13 @@ namespace _Scripts.Actors
         
         protected void InitInternal(FactionColor factionColor)
         {
+            if (factionColor == FactionColor.Black)
+                CurrentHealth *= Random.Range(2, 5);
+            else if (factionColor == FactionColor.Gold)
+                CurrentHealth *= 5;
             _healthMax = CurrentHealth;
             Faction = factionColor;
+                
             
             attackAmount = (int)(DamagePerSecond * attackInterval);
             regenAmount = (int)(RegenPerSecond * regenInterval);
@@ -109,6 +114,9 @@ namespace _Scripts.Actors
 
         protected virtual void RegenerateHealth()
         {
+            if (Faction is FactionColor.Black or FactionColor.Gold)
+                return;
+            
             if (regenTimer == 0)
             {
                 regenTimer = Time.realtimeSinceStartup + regenInterval;

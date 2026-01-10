@@ -49,7 +49,7 @@ namespace _Scripts
         {
             foreach (var data in prefabs)
             {
-                if (data.type == type) return data.cost;
+                if (data.type == type) return (int)data.prefab.Cost;
             }
             
             return int.MaxValue;

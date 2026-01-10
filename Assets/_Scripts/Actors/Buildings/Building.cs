@@ -119,6 +119,7 @@ namespace _Scripts.Actors.Buildings
             
             CurrentHealth += unit.Cost * unit.HealthPercentage;
             unit.Die(this);
+            UpdateCurrentHealth();
             return true;
         }
 
@@ -131,9 +132,12 @@ namespace _Scripts.Actors.Buildings
         
         public bool TrySpend(float cost)
         {
-            var isAvailable = CurrentHealth >= cost;
+            var isAvailable = CurrentHealth > cost;
             if (isAvailable)
+            {
                 CurrentHealth -= cost;
+                UpdateCurrentHealth();
+            }
             return isAvailable;
         }
 
@@ -141,8 +145,9 @@ namespace _Scripts.Actors.Buildings
 
         private void Capture(Actor attacker)
         {
+            CurrentHealth = Faction != FactionColor.Gold ? 100 : 500;
             Faction = attacker.Faction;
-            CurrentHealth = 1;
+            UpdateCurrentHealth();
             
             _factionColor = Faction;
             _isPlayerBuilding = GameplayController.Instance.PlayerColor == _factionColor;

@@ -20,7 +20,6 @@ namespace _Scripts.Actors.Units
         private float[] _segmentLengths;
         private float _totalLength;
         private float _distanceTraveled;
-        private int _segmentIndex;
 
         public Building Origin { get; private set; }
         public Building Target { get; private set; }
@@ -33,7 +32,6 @@ namespace _Scripts.Actors.Units
 
             BuildPathCache();
             _distanceTraveled = 0f;
-            _segmentIndex = 0;
 
             transform.position = _positions[0];
 
@@ -119,7 +117,7 @@ namespace _Scripts.Actors.Units
             _distanceTraveled += Speed * Time.deltaTime;
 
             // Дошли до конца
-            if (_distanceTraveled >= _totalLength - 0.5f)
+            if (_distanceTraveled >= _totalLength - 0.1f)
             {
                 return false;
             }
@@ -135,7 +133,6 @@ namespace _Scripts.Actors.Units
             }
 
             idx = Mathf.Clamp(idx, 0, _segmentLengths.Length - 1);
-            _segmentIndex = idx;
 
             float segLen = _segmentLengths[idx];
             float t = segLen > 0f ? dist / segLen : 1f;

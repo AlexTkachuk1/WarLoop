@@ -30,7 +30,41 @@ namespace _Scripts
                 if (!candidate.HasValue)
                     break;
 
-                SpawnTower(candidate.Value, _towers.Count == 0 ? FactionColor.Blue : FactionColor.Red);
+                var faction = FactionColor.Black;
+                switch (_towers.Count)
+                {
+                    case 0:
+                        faction = FactionColor.Blue;
+                        break;
+                    case 1:
+                        faction = FactionColor.Red;
+                        break;
+                    case 2:
+                        if (Random.value < 0.7f)
+                            faction = FactionColor.Purple;
+                        else if (Random.value < 0.5f)
+                            faction = FactionColor.Gold;
+                        break;
+                    case 3:
+                        if (Random.value < 0.7f)
+                            faction = FactionColor.Yellow;
+                        else if (Random.value < 0.5f)
+                            faction = FactionColor.Gold;
+                        break;
+                    case 4:
+                        if (Random.value < 0.33f)
+                            faction = FactionColor.Red;
+                        break;
+                    case 5:
+                        if (Random.value < 0.33f)
+                            faction = FactionColor.Red;
+                        else if (Random.value < 0.5f)
+                            faction = FactionColor.Yellow;
+                        else if (Random.value < 0.5f)
+                            faction = FactionColor.Purple;
+                        break;
+                }
+                SpawnTower(candidate.Value, faction);
                 validPositions.Remove(candidate.Value);
             }
         }

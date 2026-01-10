@@ -14,6 +14,5 @@ namespace _Scripts
     {
         public UnitType type;
         public Unit prefab;
-        public int cost;
     }
 }

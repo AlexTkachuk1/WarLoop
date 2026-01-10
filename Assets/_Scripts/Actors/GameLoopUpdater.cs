@@ -46,6 +46,10 @@ namespace _Scripts.Actors
             {
                 if (strategy.Building.Faction == GameplayController.Instance.PlayerColor)
                     continue;
+                if (strategy.Building.Faction == FactionColor.Black)
+                    continue;
+                if (strategy.Building.Faction == FactionColor.Gold)
+                    continue;
                 
                 strategy.ProcessFrame();
             }
@@ -62,7 +66,7 @@ namespace _Scripts.Actors
                     continue;
                 }
                 
-                if (actor.HealthPercentage <= 0)
+                if (actor.HealthPercentage <= 0 || actor.Faction == FactionColor.Gold)
                     continue;
 
                 var result = actor.ProcessFrame();
