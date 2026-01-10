@@ -60,9 +60,11 @@ namespace _Scripts.Actors.Units
             
             if (TryMove())
                 return ProcessFrameResult.Running;
-                
-            Target.Absorb(this);
-            return ProcessFrameResult.ScheduledForDisposal;
+
+            if (Target.TryAbsorb(this))
+                return ProcessFrameResult.ScheduledForDisposal;
+
+            return ProcessFrameResult.Idle;
         }
 
         public override void Die(Actor attacker)
@@ -117,15 +119,14 @@ namespace _Scripts.Actors.Units
             _distanceTraveled += Speed * Time.deltaTime;
 
             // Дошли до конца
-            if (_distanceTraveled >= _totalLength)
+            if (_distanceTraveled >= _totalLength - 0.5f)
             {
-                transform.position = _positions[^1];
                 return false;
             }
 
             // Продвигаем индекс сегмента, пока не попадём в актуальный
             float dist = _distanceTraveled;
-            int idx = _segmentIndex;
+            int idx = 0;
 
             while (idx < _segmentLengths.Length && dist > _segmentLengths[idx])
             {
@@ -133,7 +134,6 @@ namespace _Scripts.Actors.Units
                 idx++;
             }
 
-            // на всякий, если что-то пошло не так
             idx = Mathf.Clamp(idx, 0, _segmentLengths.Length - 1);
             _segmentIndex = idx;
 

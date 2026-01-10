@@ -112,13 +112,14 @@ namespace _Scripts.Actors.Buildings
 
         #region Building Functionality
         
-        public void Absorb(Unit unit)
+        public bool TryAbsorb(Unit unit)
         {
             if (unit.Faction != Faction) 
-                throw new InvalidOperationException("Factions are not equal");
+                return false;
             
             CurrentHealth += unit.Cost * unit.HealthPercentage;
             unit.Die(this);
+            return true;
         }
 
         public override void Die(Actor attacker)
