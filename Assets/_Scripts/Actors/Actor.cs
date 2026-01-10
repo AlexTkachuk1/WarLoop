@@ -40,12 +40,14 @@ namespace _Scripts.Actors
         private float _healthMax;
         private FactionColor _faction;
 
-        public void SpawnUnit(int cost)
+        public bool SpawnUnit(int cost)
         {
-            if (cost >= CurrentHealth) return;
+            if (cost > CurrentHealth) return false;
             
             CurrentHealth -= cost;
             UpdateCurrentHealth();
+
+            return true;
         }
         
         protected virtual void UpdateCurrentHealth() {}

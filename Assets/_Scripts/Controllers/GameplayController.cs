@@ -37,6 +37,9 @@ namespace _Scripts.Controllers
 
         public void SelectedBuilding(Building building)
         {
+            if (SelectedUnitComponent.Instance) SelectedUnitComponent.Instance.ClearSelectedUnitType();
+            if (_selectedBuilding != null) SetSelectedRoads(false);
+            
             _selectedBuilding =  building;
 
             UIController.Instance.OpenTowerWindow();
@@ -87,7 +90,7 @@ namespace _Scripts.Controllers
             
             if (road == null)  return false;
 
-            _selectedBuilding.SpawnUnit(unitCost);
+            if (!_selectedBuilding.SpawnUnit(unitCost)) return false;
             _units.Add(unitFactory.Create(selectedUnitType, road, unitsParent, _playerColor));
             
             return true;

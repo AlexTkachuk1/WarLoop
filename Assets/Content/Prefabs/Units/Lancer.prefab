@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 8657159686215360381}
   <CurrentHealth>k__BackingField: 2
   <RegenPerSecond>k__BackingField: 0
-  <DamagePerSecond>k__BackingField: 0.9
+  <DamagePerSecond>k__BackingField: 1.3
   regenInterval: 4
   attackInterval: 3
   _deathEffectPrefab: {fileID: 8144435333034838183, guid: 292e2b3ca2597894b9e220690ac98e7f, type: 3}

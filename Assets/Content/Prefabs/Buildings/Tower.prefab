@@ -687,9 +687,9 @@ MonoBehaviour:
   - {fileID: 2575826621141123413}
   - {fileID: 1277114086964419690}
   - {fileID: 4119077158083616384}
-  <CurrentHealth>k__BackingField: 10
+  <CurrentHealth>k__BackingField: 20
   <RegenPerSecond>k__BackingField: 1
-  <DamagePerSecond>k__BackingField: 1
+  <DamagePerSecond>k__BackingField: 2
   regenInterval: 4
   attackInterval: 3
   buildingCanvas: {fileID: 4250433525764284238}
