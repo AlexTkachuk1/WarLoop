@@ -94,11 +94,14 @@ namespace _Scripts.AI
                 case UnitTypeStrategyType.SpawnCounterType:
                     var incomingUnits = GameLoopUpdater.Instance.Actors
                         .OfType<Unit>()
-                        .Where(a => a.Target == Building && a.Origin == road.Last().GetComponent<Building>())
+                        .Where(a => a.Target == Building && BuildingUtils.TryGetBuildingOnCell(road.Last(), out var origin) && a.Origin == origin)
                         .GroupBy(a => a.UnitType)
                         .Select(a => (a.Key, a.Count()))
                         .ToList();
                     
+                    if (!incomingUnits.Any())
+                        return GetRandomUnitType();
+
                     var mostCommon = incomingUnits.OrderByDescending(x => x.Item2).First();
                     return Counter(mostCommon.Key);
                 default:

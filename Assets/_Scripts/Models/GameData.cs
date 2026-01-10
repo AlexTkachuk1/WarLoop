@@ -14,7 +14,6 @@ namespace _Scripts.Models
     {
         [SerializeField] private StrategyAggressionData[] aggressionData;
         
-        [field: SerializeField] public FactionColor Player { get; private set; }
         [field: SerializeField] public float RockPaperScissorsDamageMod { get; private set; }
         [field: SerializeField] public Building BuildingPrefab { get; private set; }
         [field: SerializeField] public Unit[] UnitPrefabs { get; private set; }

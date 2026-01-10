@@ -17,8 +17,6 @@ namespace _Scripts.Actors
             Actors.Add(actor);
             if (actor is Building building)
             {
-                if (building.Faction == GameplayController.Instance.PlayerColor) return;
-                
                 var buildingStrategy = new BuildingStrategy();
                 _strategies.Add(buildingStrategy);
                 buildingStrategy.Init(building, 
@@ -46,7 +44,7 @@ namespace _Scripts.Actors
         {
             foreach (var strategy in _strategies)
             {
-                if (strategy.Building.Faction == Bootstrap.Instance.GameData.Player)
+                if (strategy.Building.Faction == GameplayController.Instance.PlayerColor)
                     continue;
                 
                 strategy.ProcessFrame();
