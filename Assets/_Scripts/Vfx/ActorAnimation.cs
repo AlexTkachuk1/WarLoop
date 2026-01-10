@@ -1,4 +1,5 @@
-﻿using _Scripts.Actors;
+﻿using System;
+using _Scripts.Actors;
 using _Scripts.Helpers;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace _Scripts.Vfx
 {
     public class ActorAnimation : MonoBehaviour
     {
+        [SerializeField] private SpriteAnimations _default;
         [SerializeField] private SpriteAnimations _run;
         [SerializeField] private SpriteAnimations _idle;
         [SerializeField] private SpriteAnimations _attack;
@@ -14,6 +16,11 @@ namespace _Scripts.Vfx
         private float _time;
         private Sprite _last;
         private SpriteAnimations _currentAnimations;
+
+        private void Awake()
+        {
+            if (_default != null) _currentAnimations = _default;
+        }
 
         public void Animate(ProcessFrameResult result)
         {

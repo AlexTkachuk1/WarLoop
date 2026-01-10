@@ -74,7 +74,7 @@ namespace _Scripts
         
         private void CreateWaterCell(int x, int y)
         {
-            Cell waterCell = cellFactory.Create(CellType.Water, x, y, cellsParent);
+            Cell waterCell = cellFactory.Create(Random.value < 0.005f ? CellType.Duck : CellType.Water, x, y, cellsParent);
             _waterCells.Add(waterCell);
         }
         
