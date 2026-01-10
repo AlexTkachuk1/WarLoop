@@ -578,6 +578,7 @@ MonoBehaviour:
   unitFactory: {fileID: 11400000, guid: d6721143113182b4793f070d1cab2225, type: 2}
   deselectMouseButton: 1
   unitsParent: {fileID: 556237490}
+  _crossroadCellHighlighted: 0
 --- !u!1 &1534609730
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +882,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 4383532994204323901, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383532994204323901, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383532994204323901, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383532994204323901, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5137921422189437887, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -920,6 +937,44 @@ PrefabInstance:
     - target: {fileID: 5137921422189437887, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206308230949592797, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206308230949592797, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206308230949592797, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206308230949592797, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206308230949592797, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206308230949592797, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010857315048023027, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_text
+      value: Sometimes instead of attacking one enemy, it's better to attack them
+        all at once.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451665796814051332, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: tips.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451665796814051332, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: tips.Array.data[6]
+      value: Sometimes instead of attacking one enemy, it's better to attack them
+        all at once.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

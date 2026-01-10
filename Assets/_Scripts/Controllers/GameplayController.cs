@@ -23,6 +23,8 @@ namespace _Scripts.Controllers
         private List<Cell> _selectedRoad;
         
         public FactionColor PlayerColor => _playerColor;
+
+        public bool _crossroadCellHighlighted = false;
         
         private readonly List<Unit> _units =  new();
 
@@ -68,15 +70,37 @@ namespace _Scripts.Controllers
         
         public void SetHighlightRoads(bool highlight, Cell targetCell)
         {
-            var road = _selectedBuilding.FindRoadContainingCell(targetCell);
+            var roads = _selectedBuilding.FindRoadContainingCell(targetCell);
             
-            if (road == null)  return;
-            
-            foreach (var cell in road)
+            if (roads.Count == 0)  return;
+            if (roads.Count > 1 && highlight) _crossroadCellHighlighted = true;
+
+            if (!highlight) KillHighlightRoads(_selectedBuilding.Roads);
+            else
             {
-                var roadCell = (RoadCell)cell;
-                roadCell.Highlight2(highlight);
+                foreach (var road in roads)
+                {
+                    foreach (var cell in road)
+                    {
+                        var roadCell = (RoadCell)cell;
+                        roadCell.Highlight2(highlight);
+                    }
+                }
             }
+        }
+
+        private void KillHighlightRoads(List<List<Cell>> roads)
+        {
+            foreach (var road in roads)
+            {
+                foreach (var cell in road)
+                {
+                    var roadCell = (RoadCell)cell;
+                    roadCell.Highlight2(false);
+                }
+            }
+
+            _crossroadCellHighlighted = false;
         }
 
         public bool TryCreateUnit(Cell targetCell)
@@ -86,13 +110,16 @@ namespace _Scripts.Controllers
             
             if (_selectedBuilding.CurrentHealth < unitFactory.GetCost(selectedUnitType)) return false;
 
-            var road = _selectedBuilding.FindRoadContainingCell(targetCell);
+            var roads = _selectedBuilding.FindRoadContainingCell(targetCell);
             
-            if (road == null)  return false;
+            if (roads.Count == 0)  return false;
 
             if (!_selectedBuilding.SpawnUnit(unitCost)) return false;
-            _units.Add(unitFactory.Create(selectedUnitType, road, unitsParent, _playerColor));
-            
+
+            foreach (var road in roads)
+            {
+                _units.Add(unitFactory.Create(selectedUnitType, road, unitsParent, _playerColor));
+            }
             return true;
         }
     }

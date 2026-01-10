@@ -67,22 +67,24 @@ namespace _Scripts.Actors.Buildings
             currentBalanceText.text = CurrentHealth < 1000 ? $"{CurrentHealth:0}" : short.MinValue.ToString();
         }
         
-        public List<Cell> FindRoadContainingCell(Cell targetCell)
+        public List<List<Cell>> FindRoadContainingCell(Cell targetCell)
         {
             if (targetCell == null) return null;
     
+            var result = new List<List<Cell>>();
+            
             foreach (var road in Roads)
             {
                 foreach (var cell in road)
                 {
                     if (cell != null && cell.X == targetCell.X && cell.Y == targetCell.Y)
                     {
-                        return road;
+                        result.Add(road);
                     }
                 }
             }
     
-            return null;
+            return result;
         }
         
         #region Pointer Events

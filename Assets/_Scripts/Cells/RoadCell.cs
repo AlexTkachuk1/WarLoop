@@ -59,12 +59,14 @@ namespace _Scripts
 
             if (highlight)
             {
-                if (roadSprite.color == DESELECTED) return;
+                if (roadSprite.color == HIGHLIGHTED) return;
                 _oldColor = new Color(roadSprite.color.r, roadSprite.color.g, roadSprite.color.b, 1f);
                 roadSprite.color = HIGHLIGHTED;
             }
             else
             {
+                if (roadSprite.color == _oldColor) return;
+
                 roadSprite.color = _oldColor;
             }
         }
