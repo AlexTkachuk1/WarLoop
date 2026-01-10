@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 3606396741422540317}
   - component: {fileID: 1672749706271564058}
   - component: {fileID: 1480201752564003526}
+  - component: {fileID: 8596300233224853603}
   m_Layer: 0
   m_Name: RoadCell
   m_TagString: Untagged
@@ -255,3 +256,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8596300233224853603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6242803970769463854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0670edfaaf4c89a7777123a9dc1606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: '<b>Road</b>. Fighters refuse to travel outside of the roads. Select tower,
+    fighter type and road to recruit a fighter.
+
+
+    <color=#9f9fff>TODO: fix duplicate
+    fighter spawn on crossroad cells bug</color>'

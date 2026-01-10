@@ -366,7 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0670edfaaf4c89a7777123a9dc1606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: '<b>Blue tower</b>. Massive building that spawns fighters along the road.
+  _text: '<b>Ally tower</b>. Massive building that spawns fighters along the road.
+    Select a tower, fighter type and road to recruit a fighter.d
 
 
     <color=#9f9fff>TODO:
@@ -881,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0670edfaaf4c89a7777123a9dc1606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: '<b>Yellow tower</b>. Massive building that spawns fighters along the road.
+  _text: '<b>Enemy tower</b>. Massive building that spawns fighters along the road.
 
 
     <color=#9f9fff>TODO:
@@ -1004,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0670edfaaf4c89a7777123a9dc1606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: '<b>Red tower</b>. Massive building that spawns fighters along the road.
+  _text: '<b>Enemy tower</b>. Massive building that spawns fighters along the road.
 
 
     <color=#9f9fff>TODO:
@@ -1202,7 +1203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0670edfaaf4c89a7777123a9dc1606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: '<b>Purple tower</b>. Massive building that spawns fighters along the road.
+  _text: '<b>Enemy tower</b>. Massive building that spawns fighters along the road.
 
 
     <color=#9f9fff>TODO:
@@ -1948,7 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0670edfaaf4c89a7777123a9dc1606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: <b>Black tower</b>. Massive building that refuses to fight.
+  _text: <b>Neutral tower</b>. Massive building that refuses to fight.
 --- !u!1 &7789079906914416109
 GameObject:
   m_ObjectHideFlags: 0
