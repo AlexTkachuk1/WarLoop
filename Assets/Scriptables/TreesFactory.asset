@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300c7029e88a4e0fa2270f8e1b3d7b7f, type: 3}
+  m_Name: TreesFactory
+  m_EditorClassIdentifier: 
+  prefabs:
+  - type: 17
+    prefab: {fileID: 7996770351194196154, guid: d05237d3ba53b3047ab06f6f27875590, type: 3}
+  - type: 16
+    prefab: {fileID: 789687127719890011, guid: 766639006d1d00141a6b9df9a62eed4f, type: 3}
+  - type: 14
+    prefab: {fileID: 4326423663855178202, guid: 753eee079845bfa49a6e4540ed4791ba, type: 3}
+  - type: 15
+    prefab: {fileID: 5641203519707640729, guid: 5f22a52d1ed174f41b5c4c8bec6f9466, type: 3}

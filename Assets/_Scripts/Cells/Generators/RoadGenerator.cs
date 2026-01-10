@@ -14,6 +14,8 @@ namespace _Scripts
 
         private Dictionary<Vector2Int, Cell> _existingRoadCells = new();
         
+        public HashSet<Cell> RoadCells = new();
+        
         public void GenerateRoads(int minConnections = 1, int maxConnections = 3)
         {
             _existingRoadCells.Clear();
@@ -95,6 +97,7 @@ namespace _Scripts
                     _existingRoadCells[coord] = cell;
                     
                     road.Add(cell);
+                    RoadCells.Add(cell);
                 }
             }
             
@@ -142,6 +145,8 @@ namespace _Scripts
                     }
                 }
             }
+            
+            RoadCells.Clear();
         }
     }
 }

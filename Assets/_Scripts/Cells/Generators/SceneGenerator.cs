@@ -9,6 +9,7 @@ namespace _Scripts
             MapGenerator.Instance.Generate();
             BuildingsGenerator.Instance.GenerateTowers(7,5, 1);
             RoadGenerator.Instance.GenerateRoads();
+            TreesGenerator.Instance.Generate();
         }
     }
 }

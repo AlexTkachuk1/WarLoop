@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Scripts.Controllers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -17,7 +18,15 @@ namespace _Scripts.Actors.Buildings
         [Header("Highlight Settings")]
         [SerializeField] private SpriteRenderer[] highlightSprites;
         [SerializeField] private Color highlightColor = new Color(1f, 1f, 1f, 0.5f);
-
+        
+        
+        [SerializeField] private float regenInterval = 4f;
+        [SerializeField] private int regenAmount = 5;
+       
+        [SerializeField] private TMP_Text currentBalanceText;
+        
+        private float _regenTimer = 0;
+        
         private bool _isPlayerBuilding;
         private FactionColor _factionColor;
         private Vector3 _originalScale;
@@ -31,9 +40,29 @@ namespace _Scripts.Actors.Buildings
             InitInternal(factionColor);
             
             _isPlayerBuilding = GameplayController.Instance.PlayerColor == _factionColor;
-            buildingCanvas.enabled = _isPlayerBuilding;
+            clickableImage.raycastTarget = _isPlayerBuilding;
+            UpdateCurrentHealth();
         }
 
+        protected override void UpdateCurrentHealth() => currentBalanceText.text = $"{CurrentHealth}";
+        
+        protected override void RegenerateHealth()
+        {
+            if (_regenTimer == 0)
+            {
+                _regenTimer = Time.realtimeSinceStartup + regenInterval;
+            }
+            else
+            {
+                if (_regenTimer <= Time.realtimeSinceStartup)
+                {
+                    _regenTimer = 0;
+                    CurrentHealth += regenAmount;
+                    UpdateCurrentHealth();
+                }
+            }
+        }
+        
         public List<Cell> FindRoadContainingCell(Cell targetCell)
         {
             if (targetCell == null) return null;
@@ -136,9 +165,9 @@ namespace _Scripts.Actors.Buildings
             _factionColor = Faction;
             _isPlayerBuilding = GameplayController.Instance.PlayerColor == _factionColor;
             
-            if (buildingCanvas != null)
+            if (clickableImage != null)
             {
-                buildingCanvas.enabled = _isPlayerBuilding;
+                clickableImage.raycastTarget = _isPlayerBuilding;
             }
         }
         

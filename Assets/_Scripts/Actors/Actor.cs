@@ -34,7 +34,10 @@ namespace _Scripts.Actors
             if (cost >= CurrentHealth) return;
             
             CurrentHealth -= cost;
+            UpdateCurrentHealth();
         }
+        
+        protected virtual void UpdateCurrentHealth() {}
         
         protected void InitInternal(FactionColor factionColor)
         {
@@ -79,12 +82,15 @@ namespace _Scripts.Actors
             return false;
         }
 
-        private void RegenerateHealth() => CurrentHealth += RegenPerSecond * Time.deltaTime;
+        protected virtual void RegenerateHealth() => CurrentHealth += RegenPerSecond * Time.deltaTime;
         
         private bool TakeDamage(Actor attacker)
         {
             var damageAmount = CalculateIncomingDamage(attacker) * Time.deltaTime;
             CurrentHealth = Mathf.Max(0, CurrentHealth - damageAmount);
+            
+            UpdateCurrentHealth();
+
             return CurrentHealth <= 0;
         }
 

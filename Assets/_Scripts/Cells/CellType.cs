@@ -17,5 +17,11 @@
         
         Tower = 12,
         Road = 13,
+        
+        ChristmasTree = 14,
+        Spruce = 15,
+        Birch = 16,
+        Ash = 17,
+        
     }
 }
