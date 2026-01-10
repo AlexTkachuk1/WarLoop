@@ -797,9 +797,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 132614383108357124, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.8242257
+      objectReference: {fileID: 0}
+    - target: {fileID: 132614383108357124, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9054117
+      objectReference: {fileID: 0}
+    - target: {fileID: 132614383108357124, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.9245283
+      objectReference: {fileID: 0}
     - target: {fileID: 1303909485907763807, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722492197690516227, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055751724262476554, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055751724262476554, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055751724262476554, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055751724262476554, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383532994204323901, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 767.8777
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383532994204323901, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 601.9263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383532994204323901, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.3195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383532994204323901, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.4928
       objectReference: {fileID: 0}
     - target: {fileID: 5137921422189437887, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -839,6 +887,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5137921422189437887, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542095283423821051, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867964403449754306, guid: 634536c35bcb6a742b52734a95848be5, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

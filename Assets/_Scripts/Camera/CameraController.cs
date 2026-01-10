@@ -28,6 +28,7 @@ namespace _Scripts
         private void Start()
         {
             CacheBounds();
+            CenterOnMapCenter();
             ClampPosition();
         }
 
@@ -47,6 +48,35 @@ namespace _Scripts
         {
             _minBounds = MapGenerator.Instance.MinBounds;
             _maxBounds = MapGenerator.Instance.MaxBounds;
+        }
+
+        public void CenterOnWorldPosition(Vector3 worldPosition)
+        {
+            Vector3 newPosition = worldPosition;
+            newPosition.z = _camera.transform.position.z;
+        
+            _camera.transform.position = newPosition;
+            ClampPosition();
+        }
+        
+        public void CenterOnMapCenter()
+        {
+            if (MapGenerator.Instance == null) return;
+            
+            Vector2 center = (_minBounds + _maxBounds) / 2f;
+            
+            CenterOnWorldPosition(center);
+        }
+        
+        public void CenterOnCell(int cellX, int cellY, float cellSize = 1f)
+        {
+            Vector3 worldPosition = new Vector3(
+                cellX * cellSize,
+                cellY * cellSize,
+                0f
+            );
+            
+            CenterOnWorldPosition(worldPosition);
         }
 
         #region Edge Scroll

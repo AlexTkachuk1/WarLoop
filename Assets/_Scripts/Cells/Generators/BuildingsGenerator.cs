@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _Scripts.Actors;
+using _Scripts.Actors.Buildings;
+using _Scripts.Controllers;
 using UnityEngine;
 
 namespace _Scripts
@@ -153,5 +156,10 @@ namespace _Scripts
         }
 
         #endregion
+        
+        public Cell GetPlayerTower()
+        {
+            return _towers.First(x => x.GetComponent<Building>().Faction == GameplayController.Instance.PlayerColor);
+        }
     }
 }

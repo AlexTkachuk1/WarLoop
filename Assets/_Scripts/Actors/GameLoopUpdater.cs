@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _Scripts.Actors.Buildings;
 using _Scripts.AI;
 using _Scripts.Controllers;
-using _Scripts.GameLoop;
+using _Scripts.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Scripts.Actors
 {
@@ -12,6 +14,11 @@ namespace _Scripts.Actors
         public List<Actor> Actors { get; } = new();
         private List<BuildingStrategy> _strategies = new();
 
+        public bool PlayerIsAlive => Actors.Any(x => x.Faction == FactionColor.Blue);
+        public bool EnemiesIsAlive => Actors.Any(x => x.Faction != FactionColor.Blue);
+        
+        private bool GameIsOver = false;
+        
         public void Add(Actor actor)
         {
             Actors.Add(actor);
@@ -36,8 +43,22 @@ namespace _Scripts.Actors
 
         private void Update()
         {
+            if (GameIsOver) return;
+            
             UpdateActors();
             UpdateAI();
+
+            if (!PlayerIsAlive)
+            {
+                GameIsOver = true;
+                EndGameWindow.Instance.ShowLoseScreen();
+            }
+
+            if (!EnemiesIsAlive)
+            {
+                GameIsOver = true;
+                EndGameWindow.Instance.ShowWinScreen();
+            }
         }
 
         private void UpdateAI()
