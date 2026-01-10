@@ -18,7 +18,7 @@ namespace _Scripts
         [SerializeField] private Transform cellsParent;
         [SerializeField] private Transform wallsParent;
         
-        private const int OFFSET = 6;
+        private const int OFFSET = 3;
         public Vector2 MinBounds => new Vector2(- OFFSET, - OFFSET);
         public Vector2 MaxBounds => new Vector2(Width + OFFSET, Height + OFFSET);
         
